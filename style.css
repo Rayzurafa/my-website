@@ -1,108 +1,209 @@
-body {
-  background-color: #f5f5f5;
-  font-family: 'Inter', sans-serif;
-  color: #222222;
+/* ── Reset & Base ── */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+body {
+  background-color: #faf8f5;
+  font-family: 'Inter', sans-serif;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+/* ── Container ── */
 .container {
-  max-width: 600px;
+  max-width: 680px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 0 24px 80px;
 }
 
-.header {
-  border-bottom: 1px solid #dddddd;
-  padding-bottom: 32px;
-  margin-bottom: 40px;
+/* ── Hero ── */
+.hero {
+  padding: 80px 0 64px;
+  border-bottom: 1px solid #e8e3dc;
+  margin-bottom: 64px;
 }
 
-.section {
-  margin-bottom: 40px;
+.hero-tag {
+  display: inline-block;
+  background-color: #f0ebe3;
+  color: #8a7560;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 32px;
 }
 
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 56px;
-  margin-bottom: 8px;
-  margin-top: 0;
-  line-height: 1.1;
+  font-size: 52px;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-bottom: 24px;
+  color: #1a1a1a;
 }
 
-h2.subtitle {
+.hero-bio {
+  font-size: 16px;
+  color: #6b6157;
+  line-height: 1.8;
+  max-width: 520px;
+  margin-bottom: 40px;
+}
+
+/* ── Buttons ── */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.btn-primary {
+  background-color: #1a1a1a;
+  color: #faf8f5;
+  padding: 12px 24px;
+  font-family: 'Inter', sans-serif;
   font-size: 13px;
-  color: #888888;
-  font-weight: 400;
-  margin-top: 0;
-  letter-spacing: 3px;
-  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #3d3530;
+}
+
+.btn-secondary {
+  color: #8a7560;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  color: #1a1a1a;
+}
+
+/* ── Sections ── */
+.section {
+  margin-bottom: 56px;
 }
 
 h3 {
-  margin-top: 0;
-  margin-bottom: 16px;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  border-left: 3px solid #222222;
+  color: #8a7560;
+  margin-bottom: 20px;
   padding-left: 12px;
+  border-left: 2px solid #d4c9bb;
 }
 
 p, li {
-  line-height: 1.8;
   font-size: 15px;
+  line-height: 1.8;
+  color: #4a4540;
   font-weight: 300;
 }
 
-a {
-  color: #222222;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+ul {
+  padding-left: 20px;
 }
 
+li {
+  margin-bottom: 8px;
+}
+
+a {
+  color: #1a1a1a;
+}
+
+/* ── Dark Mode ── */
 .theme-toggle {
-  margin-top: 24px;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
   padding: 8px 16px;
-  background: transparent;
-  border: 1px solid #222222;
-  color: #222222;
+  background: #faf8f5;
+  border: 1px solid #d4c9bb;
+  color: #8a7560;
   font-family: 'Inter', sans-serif;
   font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
   cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: all 0.2s ease;
 }
 
 .theme-toggle:hover {
-  background: #222222;
-  color: #f5f5f5;
+  background: #1a1a1a;
+  color: #faf8f5;
+  border-color: #1a1a1a;
 }
 
 body.dark-mode {
-  background-color: #111111;
-  color: #eeeeee;
+  background-color: #141210;
+  color: #e8e3dc;
 }
 
-body.dark-mode .theme-toggle {
-  border-color: #eeeeee;
-  color: #eeeeee;
+body.dark-mode .hero {
+  border-bottom-color: #2a2520;
 }
 
-body.dark-mode .theme-toggle:hover {
-  background: #eeeeee;
-  color: #111111;
+body.dark-mode .hero-tag {
+  background-color: #2a2520;
+  color: #a89880;
+}
+
+body.dark-mode .hero-bio {
+  color: #a89880;
+}
+
+body.dark-mode h1 {
+  color: #e8e3dc;
 }
 
 body.dark-mode h3 {
-  border-left-color: #eeeeee;
+  color: #a89880;
+  border-left-color: #3a3530;
 }
 
-body.dark-mode .header {
-  border-bottom-color: #333333;
+body.dark-mode p,
+body.dark-mode li {
+  color: #a89880;
+}
+
+body.dark-mode .btn-primary {
+  background-color: #e8e3dc;
+  color: #141210;
+}
+
+body.dark-mode .btn-primary:hover {
+  background-color: #d4c9bb;
+}
+
+body.dark-mode .btn-secondary {
+  color: #a89880;
+}
+
+body.dark-mode .theme-toggle {
+  background: #1e1b18;
+  border-color: #3a3530;
+  color: #a89880;
 }
 
 body.dark-mode a {
-  color: #eeeeee;
+  color: #e8e3dc;
 }
